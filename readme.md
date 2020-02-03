@@ -1,6 +1,6 @@
 # dclong/jupyterhub-cuda [@DockerHub](https://hub.docker.com/r/dclong/jupyterhub-cuda/) | [@GitHub](https://github.com/dclong/docker-jupyterhub-cuda)
 
-JupyterHub with GPU (CUDA) support in Docker.
+JupyterHub with CUDA base (nvidia/cuda:10.1-base) in Docker.
 
 ## Prerequisite
 You need to [install Docker](http://www.legendu.net/en/blog/docker-installation/) before you use this Docker image.
