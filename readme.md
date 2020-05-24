@@ -25,8 +25,8 @@ docker run -d \
     -e DOCKER_USER_ID=$(id -u) \
     -e DOCKER_PASSWORD=$(id -un) \
     -e DOCKER_GROUP_ID=$(id -g) \
-    -v $(pwd):/workdir \
-    -v $(dirname $HOME):/home_host \
+    -v "$(pwd)":/workdir \
+    -v "$(dirname $HOME)":/home_host \
     dclong/jupyterhub-cuda /scripts/sys/init.sh
 ```
 The following command (only works on Linux) does the same as the above one 
@@ -43,8 +43,8 @@ docker run -d \
     -e DOCKER_USER_ID=$(id -u) \
     -e DOCKER_PASSWORD=$(id -un) \
     -e DOCKER_GROUP_ID=$(id -g) \
-    -v $(pwd):/workdir \
-    -v $(dirname $HOME):/home_host \
+    -v "$(pwd)":/workdir \
+    -v "$(dirname $HOME)":/home_host \
     dclong/jupyterhub-cuda /scripts/sys/init.sh
 ```
 ## [Get the Token for Login](http://www.legendu.net/en/blog/my-docker-images/#get-information-of-running-jupyterlab-servers) 
