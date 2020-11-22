@@ -15,9 +15,8 @@ RUN apt-get update \
 # For libraries in the cuda-compat-* package: https://docs.nvidia.com/cuda/eula/index.html#attachment-a
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        cuda-cudart-11-1 \
-        cuda-compat-11-1 \
-    && ln -s cuda-10.1 /usr/local/cuda \
+        cuda-cudart-11-0 \
+        cuda-compat-11-0 \
     && rm -rf /var/lib/apt/lists/*
 
 # Required for nvidia-docker
