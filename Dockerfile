@@ -4,6 +4,7 @@ FROM dclong/jupyterhub
 
 ARG repo=https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64
 ARG repo_ml=https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu2004/x86_64
+#@Qustion: Do we really need gnupg2 here?
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         gnupg2 \
