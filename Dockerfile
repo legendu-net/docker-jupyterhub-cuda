@@ -13,7 +13,7 @@ RUN apt-get update \
     && echo "deb $repo_ml /" > /etc/apt/sources.list.d/nvidia-ml.list \
     && apt-get autoremove -y \
     && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 # For libraries in the cuda-compat-* package: https://docs.nvidia.com/cuda/eula/index.html#attachment-a
 RUN apt-get update \
@@ -22,7 +22,7 @@ RUN apt-get update \
         cuda-compat-11-1 \
     && apt-get autoremove -y \
     && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 # Required for nvidia-docker v1
 RUN echo "/usr/local/nvidia/lib" >> /etc/ld.so.conf.d/nvidia.conf \
