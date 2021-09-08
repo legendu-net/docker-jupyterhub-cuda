@@ -11,18 +11,14 @@ RUN apt-get update \
     && curl -fsSL $repo/7fa2af80.pub | apt-key add - \
     && echo "deb $repo /" > /etc/apt/sources.list.d/cuda.list \
     && echo "deb $repo_ml /" > /etc/apt/sources.list.d/nvidia-ml.list \
-    && apt-get autoremove -y \
-    && apt-get clean -y \
-    && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
+    && /scripts/sys/purge_cache.sh
 
 # For libraries in the cuda-compat-* package: https://docs.nvidia.com/cuda/eula/index.html#attachment-a
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         cuda-cudart-11-1=11.1.74-1 \
         cuda-compat-11-1 \
-    && apt-get autoremove -y \
-    && apt-get clean -y \
-    && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
+    && /scripts/sys/purge_cache.sh
 
 # Required for nvidia-docker v1
 RUN echo "/usr/local/nvidia/lib" >> /etc/ld.so.conf.d/nvidia.conf \
