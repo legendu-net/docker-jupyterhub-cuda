@@ -8,7 +8,7 @@ ARG repo_ml=https://developer.download.nvidia.com/compute/machine-learning/repos
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         gnupg2 \
-    && curl -fsSL $repo/7fa2af80.pub | apt-key add - \
+    && apt-key adv --fetch-keys $repo/7fa2af80.pub \
     && echo "deb $repo /" > /etc/apt/sources.list.d/cuda.list \
     && echo "deb $repo_ml /" > /etc/apt/sources.list.d/nvidia-ml.list \
     && /scripts/sys/purge_cache.sh
