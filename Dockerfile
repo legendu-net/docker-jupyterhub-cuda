@@ -9,6 +9,7 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         gnupg2 \
     && apt-key adv --fetch-keys $repo/3bf863cc.pub \
+    && apt-key adv --fetch-keys $repo/7fa2af80.pub \
     && echo "deb $repo /" > /etc/apt/sources.list.d/cuda.list \
     && echo "deb $repo_ml /" > /etc/apt/sources.list.d/nvidia-ml.list \
     && /scripts/sys/purge_cache.sh
