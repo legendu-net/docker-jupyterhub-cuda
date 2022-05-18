@@ -1,6 +1,6 @@
 # NAME: dclong/jupyterhub-cuda
 FROM dclong/jupyterhub
-# GIT: https://github.com/dclong/docker-jupyterhub.git
+# GIT: https://github.com/legendu-net/docker-jupyterhub.git
 
 ARG repo=https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64
 ARG repo_ml=https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu2004/x86_64
