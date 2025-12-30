@@ -5,8 +5,8 @@ FROM dclong/jupyterhub
 ARG repo=https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64
 ARG repo_ml=https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu2004/x86_64
 #@Qustion: Do we really need gnupg2 here?
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
+RUN apt-get -y update \
+    && apt-get -y install --no-install-recommends \
         gnupg2 \
     && apt-key adv --fetch-keys $repo/3bf863cc.pub \
     && apt-key adv --fetch-keys $repo/7fa2af80.pub \
@@ -15,8 +15,8 @@ RUN apt-get update \
     && /scripts/sys/purge_cache.sh
 
 # For libraries in the cuda-compat-* package: https://docs.nvidia.com/cuda/eula/index.html#attachment-a
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
+RUN apt-get -y update \
+    && apt-get -y install --no-install-recommends \
         cuda-cudart-11-1=11.1.74-1 \
         cuda-compat-11-1 \
     && /scripts/sys/purge_cache.sh
